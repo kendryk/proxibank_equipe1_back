@@ -3,7 +3,6 @@ package com.proxibanksi.model;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.proxibanqueSI.model.Client;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.DiscriminatorColumn;
@@ -60,7 +59,7 @@ public class Account {
 	/* ************** METHODS ******************* */
 	
 	public String getAccountNumberAsString() {
-	    return String.format("%05d", number);
+	    return String.format("%05d", nbAccountOpen);
 	}
 	
 	/* ************** GETTERS SETTERS ******************* */
