@@ -11,7 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
@@ -126,6 +125,20 @@ public class Client {
 		this.phone = phone;
 	}
 	
+	
+	
+	public Set<Account> getAccountList() {
+		return accountList;
+	}
+	public void setAccountList(Set<Account> accountList) {
+		this.accountList = accountList;
+	}
+	public Advisor getAdvisor() {
+		return advisor;
+	}
+	public void setAdvisor(Advisor advisor) {
+		this.advisor = advisor;
+	}
 	/************ To String ************/
 	@Override
 	public String toString() {

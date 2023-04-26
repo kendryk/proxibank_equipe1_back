@@ -3,8 +3,6 @@ package com.proxibanksi.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.proxibanqueSI.model.Client;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
