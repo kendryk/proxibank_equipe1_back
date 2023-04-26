@@ -50,10 +50,10 @@ public class Client {
 	@OneToMany(mappedBy = "owner", cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	private Set<Account> accountList = new HashSet<>();
 	
-	@ManyToOne(cascade= CascadeType.PERSIST)
+	@OneToMany(cascade= CascadeType.PERSIST)
 	@JoinColumn(name= "owner_id")
 	@JsonIgnore
-	private Set<Advisor> advisorList = new HashSet<>();
+	private Advisor advisor;
 	
 	/************ Constructor ************/
 	
