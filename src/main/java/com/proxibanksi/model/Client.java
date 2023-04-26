@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
@@ -49,7 +50,7 @@ public class Client {
 	@OneToMany(mappedBy = "owner", cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	private Set<Account> accountList = new HashSet<>();
 	
-	@OneToMany(cascade= CascadeType.PERSIST)
+	@ManyToOne(cascade= CascadeType.PERSIST)
 	@JoinColumn(name= "owner_id")
 	@JsonIgnore
 	private Advisor advisor;
