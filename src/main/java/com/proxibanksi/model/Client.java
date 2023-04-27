@@ -36,7 +36,7 @@ public class Client {
 	private String adress;
 
 	@NotEmpty
-	@Pattern(regexp = "\\d(5)$")
+	//@Pattern(regexp = "\\d(10)$")
 	private String zipCode;
 
 	@NotEmpty
@@ -44,7 +44,7 @@ public class Client {
 	private String city;
 
 	@NotEmpty
-	@Pattern(regexp = "\\d(5)$")
+	//@Pattern(regexp = "\\d(10)$")
 	private String phone;
 
 	@OneToMany(mappedBy = "owner", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })

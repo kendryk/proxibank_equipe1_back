@@ -29,7 +29,7 @@ public class Advisor extends Employee {
 			@NotEmpty @Size(min = 8, max = 20) String password,
 			@NotEmpty @Size(min = 2, max = 50) String name,
 			@NotEmpty @Size(min = 2, max = 50) String firstname,
-			@NotEmpty Role role) {
+			 Role role) {
 		super(username, password, name,firstname,role);
 	}
 
