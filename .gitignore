@@ -33,6 +33,8 @@ build/
 .vscode/
 
 ### tmp ###
+~/tmp
 /tmp
 /tmp/logs
 *.log
+*.gz
