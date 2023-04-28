@@ -61,8 +61,7 @@ public class AdvisorController {
 	public List<Advisor> getAdvisors() {
 		return this.serviceAdvisor.getAllAdvisors();
 	}
-	
-	
+
 	@GetMapping("/{id}")
 	public Advisor getAdvisorById(@PathVariable(name = "id") Long advisorId) throws AdvisorNotFoundException {
 		return this.serviceAdvisor.getAdvisorById(advisorId);
@@ -74,27 +73,30 @@ public class AdvisorController {
 	}
 
 	/* **** POST **** */
-	@PostMapping("/add")
+	@PostMapping
 	public Advisor addAdvisor(@Valid @RequestBody Advisor advisor) {
 		return this.serviceAdvisor.addAdvisor(advisor);
 	}
-	
-	@PostMapping("/{conseillerId}/addClient")
+
+	@PostMapping("/{advisorId}/addClient")
 	public ResponseEntity<Client> addClientToConseiller(@PathVariable Long advisorId, @RequestBody Client client) {
-		this.serviceAdvisor.addClientToAdvisorByID(advisorId, client);
-		return ResponseEntity.ok().build();
+		try {
+			this.serviceAdvisor.addClientToAdvisorById(advisorId, client);
+			return new ResponseEntity<Client>(client, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 	/* **** PUT **** */
 	@PutMapping("/{advisorId}")
-	public Advisor updateTheEmployees(@Valid @RequestBody Advisor advisor, @PathVariable Long advisorId){
-		
+	public Advisor updateTheEmployees(@Valid @RequestBody Advisor advisor, @PathVariable Long advisorId) {
 		advisor.setId(advisorId);
 		return this.serviceAdvisor.updateAdvisor(advisor);
 	}
 
 	/* **** DELETE **** */
-	@DeleteMapping("/{conseillerId}")
+	@DeleteMapping("/{advisorId}")
 	public void deleteClientByID(@PathVariable Long advisorId) {
 		this.serviceAdvisor.deleteAdvisorById(advisorId);
 	}

@@ -108,7 +108,7 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	}
 
 	@Override
-	public void addClientToAdvisorByID(Long advisorId, Client client) {
+	public void addClientToAdvisorById(Long advisorId, Client client) {
 		try {
 
 			Advisor advisor = advisorDAO.findById(advisorId).get();

@@ -21,6 +21,6 @@ public interface IServiceAdvisor {
 	
 	Set<Client> getAllClientsByAdvisorId(Long advisorId);
 	
-	void addClientToAdvisorByID(Long advisorId, Client client);
+	void addClientToAdvisorById(Long advisorId, Client client);
 	
 }
