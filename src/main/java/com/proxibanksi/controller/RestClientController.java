@@ -25,73 +25,67 @@ import com.proxibanksi.service.IServiceClient;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/clients")
 public class RestClientController {
-	
+
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public Map<String, String>handleValidationExceptions(MethodArgumentNotValidException ex){
+	public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
 		HashMap<String, String> errors = new HashMap<>();
 		ex.getBindingResult().getAllErrors().forEach(e -> {
-			String fieldName = ((FieldError)e).getField();
+			String fieldName = ((FieldError) e).getField();
 			String errorMessage = e.getDefaultMessage();
 			errors.put(fieldName, errorMessage);
 		});
-		
+
 		return errors;
 	}
-	
-	
-	
-	
+
 	private IServiceClient serviceClient;
 
-	
 	/************ Constructor ************/
 	public RestClientController(IServiceClient serviceClient) {
-		
+
 		this.serviceClient = serviceClient;
 	}
-	
+
 	/************ Methods ************/
-	
+
 	// Get method
-	
+
 	@GetMapping
-	ResponseEntity< Iterable<Client>> getClients(){
-		
+	ResponseEntity<Iterable<Client>> getClients() {
+
 		return ResponseEntity.ok().body(serviceClient.getAllClients());
 	}
-	
+
 	// Post method
-	
+
 	@PostMapping("/{id}")
 	ResponseEntity<Client> createClient(@Valid @RequestBody Client client) {
-		Client createClient=serviceClient.createClient(client);
+		Client createClient = serviceClient.createClient(client);
 		return ResponseEntity.created(URI.create("/clients/" + createClient.getId())).body(createClient);
 	}
-	
+
 	// Put method
-	
+
 	@PutMapping
-	public ResponseEntity<Client> updateClient(@Valid @RequestBody Client client){
-	if (client.getId()!= null && serviceClient.isClientExist(client.getId())) {
-		Client updateClient= serviceClient.updateClient(client);
-		return ResponseEntity.ok(updateClient);
-		
+	public ResponseEntity<Client> updateClient(@Valid @RequestBody Client client) {
+		if (client.getId() != null && serviceClient.isClientExist(client.getId())) {
+			Client updateClient = serviceClient.updateClient(client);
+			return ResponseEntity.ok(updateClient);
+
+		}
+		Client saveClient = serviceClient.createClient(client);
+		return ResponseEntity.created(URI.create("/client/" + saveClient.getId())).body(saveClient);
+
 	}
-	Client saveClient= serviceClient.createClient(client);
-	return ResponseEntity.created(URI.create("/client/" + saveClient.getId())).body(saveClient);
-	
-	}
-	
+
 	// Delete Method
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Client> removeClient(@PathVariable Long id) {
 		serviceClient.removeClientById(id);
 		return ResponseEntity.ok().build();
 	}
-	
-
 
 }

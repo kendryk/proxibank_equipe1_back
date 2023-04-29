@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +24,7 @@ import jakarta.validation.constraints.Positive;
 @DiscriminatorColumn(name = "ACCOUNT_TYPE")
 @Table(name = "ACCOUNT")
 public class Account {
-	
+
 	private static int nbAccountOpen = 0;
 
 	@Id
@@ -54,14 +55,15 @@ public class Account {
 		this.number = getAccountNumberAsString();
 		this.balance = balance;
 		this.created = LocalDateTime.now();
+
 	}
 
 	/* ************** METHODS ******************* */
-	
+
 	public String getAccountNumberAsString() {
-	    return String.format("%05d", nbAccountOpen);
+		return String.format("%05d", nbAccountOpen);
 	}
-	
+
 	/* ************** GETTERS SETTERS ******************* */
 
 	public Long getId() {

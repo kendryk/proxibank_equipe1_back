@@ -7,15 +7,18 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @DiscriminatorValue("current")
 public class CurrentAccount extends Account {
-	
+
+	private String accountStatus = "current";
 	private double overdraft = 1000.0;
 
 	/* ************** CONSTRUCTORS ******************* */
 	public CurrentAccount() {
+
 	}
 
 	public CurrentAccount(@Positive Double balance) {
 		super(balance);
+
 	}
 
 	/* ************** GETTERS SETTERS ******************* */
@@ -26,9 +29,18 @@ public class CurrentAccount extends Account {
 	public void setOverdraft(double overdraft) {
 		this.overdraft = overdraft;
 	}
-	
+
+	public String getAccountStatus() {
+		return accountStatus;
+	}
+
+	public void setAccountStatus(String accountStatus) {
+		this.accountStatus = accountStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "CurrentAccount [overdraft=" + overdraft + "]";
 	}
+
 }
