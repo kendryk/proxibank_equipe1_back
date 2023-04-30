@@ -6,9 +6,12 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.proxibanksi.exception.ClientNotFoundException;
+import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
 import com.proxibanksi.repository.IAdvisorDAO;
@@ -181,4 +184,17 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		}
 	}
 
+	@Override
+    public Set<Account> getAccountsByClientId(Long advisorId, Long clientId) {
+        Advisor advisor = advisorDAO.findById(advisorId).get();
+        if (advisor == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Advisor not found"); 
+        }
+        Set<Client> clients = advisor.getClients();
+        Client client = clients.stream().filter(c -> c.getId().equals(clientId)).findFirst().orElse(null);
+        if (client == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found for this advisor"); 
+        }
+        return client.getAccountList();
+    }
 }
