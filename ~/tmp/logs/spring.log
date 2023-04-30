@@ -1,39 +1,23 @@
-2023-04-29T09:40:40.928+02:00  WARN 19436 --- [HikariPool-9 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Thread starvation or clock leap detected (housekeeper delta=9h24m20s493ms982µs900ns).
-2023-04-29T10:43:06.485+02:00  INFO 19436 --- [http-nio-8080-exec-2] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
-2023-04-29T10:47:29.886+02:00  INFO 19436 --- [RMI TCP Connection(138)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2023-04-29T10:47:29.899+02:00  INFO 19436 --- [RMI TCP Connection(138)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-04-29T10:47:29.900+02:00  INFO 19436 --- [RMI TCP Connection(138)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2023-04-29T10:47:29.911+02:00  INFO 19436 --- [RMI TCP Connection(138)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-29T10:47:29.913+02:00  INFO 19436 --- [RMI TCP Connection(138)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
-2023-04-29T10:47:29.914+02:00  INFO 19436 --- [RMI TCP Connection(138)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
-2023-04-29T10:47:33.687+02:00  INFO 23564 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 23564 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
-2023-04-29T10:47:33.690+02:00  INFO 23564 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-04-29T10:47:33.741+02:00  INFO 23564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-04-29T10:47:33.741+02:00  INFO 23564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-04-29T10:47:34.425+02:00  INFO 23564 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-29T10:47:34.499+02:00  INFO 23564 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
-2023-04-29T10:47:35.038+02:00  INFO 23564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-04-29T10:47:35.048+02:00  INFO 23564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-04-29T10:47:35.048+02:00  INFO 23564 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-04-29T10:47:35.111+02:00  INFO 23564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-04-29T10:47:35.112+02:00  INFO 23564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1370 ms
-2023-04-29T10:47:35.137+02:00  INFO 23564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-04-29T10:47:35.293+02:00  INFO 23564 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6463b296
-2023-04-29T10:47:35.294+02:00  INFO 23564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-04-29T10:47:35.304+02:00  INFO 23564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
-2023-04-29T10:47:35.403+02:00  INFO 23564 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-29T10:47:35.470+02:00  INFO 23564 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2023-04-29T10:47:35.774+02:00  INFO 23564 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-04-29T10:47:36.735+02:00  INFO 23564 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-29T10:47:36.745+02:00  INFO 23564 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-29T10:47:37.117+02:00  WARN 23564 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-04-29T10:47:37.374+02:00  INFO 23564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-04-29T10:47:37.427+02:00  INFO 23564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-04-29T10:47:37.437+02:00  INFO 23564 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 4.189 seconds (process running for 4.978)
-2023-04-29T10:47:47.147+02:00  INFO 23564 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-29T10:47:47.148+02:00  INFO 23564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-04-29T10:47:47.149+02:00  INFO 23564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-04-29T10:47:55.647+02:00  INFO 23564 --- [http-nio-8080-exec-4] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
-2023-04-29T10:51:04.307+02:00  INFO 23564 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
-2023-04-29T13:13:28.452+02:00  WARN 23564 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m50s962ms584µs400ns).
-2023-04-29T13:56:58.097+02:00  WARN 23564 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m29s146ms83µs700ns).
+2023-04-30T00:31:26.957+02:00  WARN 23564 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:31:30.722+02:00  WARN 23564 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:31:33.300+02:00  WARN 23564 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:31:36.178+02:00  WARN 23564 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:31:45.957+02:00  WARN 23564 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:31:51.255+02:00  WARN 23564 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:32:20.458+02:00  WARN 23564 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:32:36.434+02:00  WARN 23564 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-04-30T00:34:14.122+02:00  INFO 23564 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-04-30T00:34:23.796+02:00  INFO 23564 --- [http-nio-8080-exec-7] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-04-30T00:40:58.599+02:00  INFO 23564 --- [http-nio-8080-exec-7] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-04-30T00:41:08.514+02:00  INFO 23564 --- [http-nio-8080-exec-2] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-04-30T00:50:47.079+02:00  INFO 23564 --- [http-nio-8080-exec-7] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : nouveau client :Client [id=null, name=newcleint, firstName=Cedric, adress=24 allee des croix, zipCode=35350, city=st malo, phone=0665354869]
+2023-04-30T00:50:47.102+02:00  INFO 23564 --- [http-nio-8080-exec-7] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client rajouté au conseiller en Base de Donnée avec succès
+2023-04-30T10:53:32.834+02:00  WARN 23564 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h55m50s370ms800µs800ns).
+2023-04-30T11:32:35.336+02:00  INFO 23564 --- [http-nio-8080-exec-1] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-04-30T11:41:04.624+02:00  INFO 23564 --- [http-nio-8080-exec-8] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-04-30T11:44:07.511+02:00  INFO 23564 --- [RMI TCP Connection(734)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-04-30T11:44:07.538+02:00  INFO 23564 --- [RMI TCP Connection(734)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-30T11:44:07.545+02:00  INFO 23564 --- [RMI TCP Connection(734)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-30T11:44:07.564+02:00  INFO 23564 --- [RMI TCP Connection(734)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-30T11:44:07.574+02:00  INFO 23564 --- [RMI TCP Connection(734)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-30T11:44:07.581+02:00  INFO 23564 --- [RMI TCP Connection(734)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
