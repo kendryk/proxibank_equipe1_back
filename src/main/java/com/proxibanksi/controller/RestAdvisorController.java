@@ -31,7 +31,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/advisors")
 @CrossOrigin("*")
-public class AdvisorController {
+public class RestAdvisorController {
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
@@ -50,7 +50,7 @@ public class AdvisorController {
 	private IServiceAdvisor serviceAdvisor;
 
 	/* ************** CONSTRUCTORS ******************* */
-	public AdvisorController(IServiceAdvisor serviceAdvisor) {
+	public RestAdvisorController(IServiceAdvisor serviceAdvisor) {
 		this.serviceAdvisor = serviceAdvisor;
 	}
 
@@ -89,6 +89,17 @@ public class AdvisorController {
 	}
 
 	/* **** PUT **** */
+	@PutMapping("/{advisorId}/updateClient/{clientId}")
+	public ResponseEntity<Client> updateClientOfAdvisorById(@PathVariable Long advisorId, @PathVariable Long clientId,
+			@RequestBody Client client) {
+		try {
+			this.serviceAdvisor.updateClientOfAdvisorById(advisorId, clientId, client);
+			return new ResponseEntity<Client>(client, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 	@PutMapping("/{advisorId}")
 	public Advisor updateTheEmployees(@Valid @RequestBody Advisor advisor, @PathVariable Long advisorId) {
 		advisor.setId(advisorId);
