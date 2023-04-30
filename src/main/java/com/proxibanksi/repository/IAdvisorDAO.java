@@ -1,10 +1,8 @@
 package com.proxibanksi.repository;
 
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.proxibanksi.model.Advisor;
-
 
 /**
  * L'interface IAdvisorDAO hérite de l'interface JpaRepository. Une
@@ -18,7 +16,5 @@ import com.proxibanksi.model.Advisor;
  * @author Macé Cédric
  */
 public interface IAdvisorDAO extends JpaRepository<Advisor, Long> {
-	
-	
-	
+
 }

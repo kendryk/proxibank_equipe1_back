@@ -22,7 +22,6 @@ public class ServiceImplClient implements IServiceClient {
 
 	/************ Constructor ************/
 	public ServiceImplClient(ClientDao clientDao) {
-
 		this.clientDao = clientDao;
 	}
 
@@ -70,7 +69,6 @@ public class ServiceImplClient implements IServiceClient {
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
 		}
-
 	}
 
 	@Override
@@ -87,7 +85,6 @@ public class ServiceImplClient implements IServiceClient {
 
 	@Override
 	public boolean isClientExist(Long id) {
-
 		return clientDao.existsById(id);
 	}
 

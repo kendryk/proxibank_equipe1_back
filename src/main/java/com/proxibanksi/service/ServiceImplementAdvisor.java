@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.proxibanksi.exception.ClientNotFoundException;
+import com.proxibanksi.exception.DataNotFoundException;
 import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
@@ -22,9 +23,11 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	private static final Logger LOG = LoggerFactory.getLogger(ServiceImplementAdvisor.class);
 
 	private IAdvisorDAO advisorDAO;
+	private final IServiceClient serviceClient;
 
 	/* ************** CONSTRUCTORS ******************* */
-	public ServiceImplementAdvisor(IAdvisorDAO advisorDAO) {
+	public ServiceImplementAdvisor(IAdvisorDAO advisorDAO, IServiceClient serviceClient) {
+		this.serviceClient = serviceClient;
 		this.advisorDAO = advisorDAO;
 
 	}
@@ -97,6 +100,11 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	}
 
 	@Override
+	public boolean isAdvisorExist(Long id) {
+		return advisorDAO.existsById(id);
+	}
+
+	@Override
 	public Set<Client> getAllClientsByAdvisorId(Long advisorId) {
 		Set<Client> clients = null;
 
@@ -155,11 +163,12 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 
 			// récupérer le conseiller
 			Advisor advisor = advisorDAO.findById(advisorId).get();
-			
+
 			// récupérer le client
 			Set<Client> clients = advisor.getClients();
-			
-			// mettre à jour les informations du client en vérifiant que le client demandé appartient au conseiller
+
+			// mettre à jour les informations du client en vérifiant que le client demandé
+			// appartient au conseiller
 			for (Client c : clients) {
 				if (c.getId().equals(clientId)) {
 					c.setName(client.getName());
@@ -185,16 +194,31 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	}
 
 	@Override
-    public Set<Account> getAccountsByClientId(Long advisorId, Long clientId) {
-        Advisor advisor = advisorDAO.findById(advisorId).get();
-        if (advisor == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Advisor not found"); 
-        }
-        Set<Client> clients = advisor.getClients();
-        Client client = clients.stream().filter(c -> c.getId().equals(clientId)).findFirst().orElse(null);
-        if (client == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found for this advisor"); 
-        }
-        return client.getAccountList();
-    }
+	public Set<Account> getAccountsByClientId(Long advisorId, Long clientId) {
+		Advisor advisor = advisorDAO.findById(advisorId).get();
+		if (advisor == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Advisor not found");
+		}
+		Set<Client> clients = advisor.getClients();
+		Client client = clients.stream().filter(c -> c.getId().equals(clientId)).findFirst().orElse(null);
+		if (client == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found for this advisor");
+		}
+		return client.getAccountList();
+	}
+
+	@Override
+	public void deleteClientOfAdvisorById(Long advisorId, Long clientId) throws DataNotFoundException {
+		Advisor advisor = advisorDAO.findById(advisorId)
+				.orElseThrow(() -> new DataNotFoundException("Advisor not found"));
+
+		Client client = advisor.getClients().stream().filter(c -> c.getId().equals(clientId)).findFirst()
+				.orElseThrow(() -> new DataNotFoundException("Client not found"));
+
+		// supprime le client du conseiller
+		advisor.removeClient(client);
+
+		// supprime le client de la base de données
+		this.serviceClient.removeClientById(clientId);
+	}
 }

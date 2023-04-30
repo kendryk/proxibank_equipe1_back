@@ -21,7 +21,7 @@ import com.proxibanksi.service.IServiceAccount;
 @RequestMapping("/accounts")
 @CrossOrigin("*")
 public class RestAccountController {
-	
+
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
@@ -34,27 +34,22 @@ public class RestAccountController {
 
 		return errors;
 	}
-	
+
 	private IServiceAccount serviceAccount;
-	
-	
-	
+
 	public RestAccountController(IServiceAccount serviceAccount) {
-		
+
 		this.serviceAccount = serviceAccount;
 	}
 
-
-
 	@GetMapping
-	ResponseEntity<Iterable<Account>>getAllAccounts(){
+	ResponseEntity<Iterable<Account>> getAllAccounts() {
 		return ResponseEntity.ok().body(serviceAccount.getAllClientsAccount());
 	}
-	
+
 	@GetMapping("/audit")
-	ResponseEntity<Iterable<Account>>getOverDraft(){
+	ResponseEntity<Iterable<Account>> getOverDraft() {
 		return ResponseEntity.ok().body(serviceAccount.getAudit());
 	}
-	
 
 }

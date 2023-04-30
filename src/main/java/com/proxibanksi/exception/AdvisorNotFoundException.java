@@ -1,7 +1,7 @@
 package com.proxibanksi.exception;
 
 public class AdvisorNotFoundException extends Exception {
-		
+
 	/**
 	 * 
 	 */
@@ -10,7 +10,7 @@ public class AdvisorNotFoundException extends Exception {
 	public AdvisorNotFoundException() {
 		super();
 	}
-	
+
 	public AdvisorNotFoundException(String message) {
 		super(message);
 	}

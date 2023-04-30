@@ -2,7 +2,6 @@ package com.proxibanksi.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Positive;
 
 @Entity
 @DiscriminatorValue("current")

@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proxibanksi.exception.AdvisorNotFoundException;
 import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
@@ -48,7 +47,7 @@ public class RestAdvisorController {
 		return errors;
 	}
 
-	private IServiceAdvisor serviceAdvisor;
+	private final IServiceAdvisor serviceAdvisor;
 
 	/* ************** CONSTRUCTORS ******************* */
 	public RestAdvisorController(IServiceAdvisor serviceAdvisor) {
@@ -64,24 +63,39 @@ public class RestAdvisorController {
 	}
 
 	@GetMapping("/{advisorId}/clients/{clientId}/accounts")
-    public Set<Account> getAccountsByClientId(@PathVariable Long advisorId, @PathVariable Long clientId) {
-        return this.serviceAdvisor.getAccountsByClientId(advisorId, clientId);
-    }
-
-	@GetMapping("/{id}")
-	public Advisor getAdvisorById(@PathVariable(name = "id") Long advisorId) throws AdvisorNotFoundException {
-		return this.serviceAdvisor.getAdvisorById(advisorId);
+	public Set<Account> getAccountsByClientId(@PathVariable Long advisorId, @PathVariable Long clientId) {
+		return this.serviceAdvisor.getAccountsByClientId(advisorId, clientId);
 	}
 
-	@GetMapping("/{advisorId}/listClient")
-	public Set<Client> getAllClientsByAdvisorId(@PathVariable Long advisorId) {
-		return this.serviceAdvisor.getAllClientsByAdvisorId(advisorId);
+	@GetMapping("/{advisorId}")
+	public ResponseEntity<Advisor> getAdvisorById(@PathVariable Long advisorId) {
+	    try {
+	        Advisor advisor = this.serviceAdvisor.getAdvisorById(advisorId);
+	        return new ResponseEntity<>(advisor, HttpStatus.OK);
+	    } catch (Exception e) {
+	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	}
+	
+	@GetMapping("/{advisorId}/listClients")
+	public ResponseEntity<Set<Client>> getAllClientsByAdvisorId(@PathVariable Long advisorId) {
+	    try {
+	        Set<Client> clients = this.serviceAdvisor.getAllClientsByAdvisorId(advisorId);
+	        return new ResponseEntity<>(clients, HttpStatus.OK);
+	    } catch (Exception e) {
+	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
 	}
 
 	/* **** POST **** */
 	@PostMapping
-	public Advisor addAdvisor(@Valid @RequestBody Advisor advisor) {
-		return this.serviceAdvisor.addAdvisor(advisor);
+	public ResponseEntity<Advisor> addAdvisor(@Valid @RequestBody Advisor advisor) {
+		try {
+			Advisor addedAdvisor = this.serviceAdvisor.addAdvisor(advisor);
+			return new ResponseEntity<>(addedAdvisor, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 	@PostMapping("/{advisorId}/addClient")
@@ -107,14 +121,36 @@ public class RestAdvisorController {
 	}
 
 	@PutMapping("/{advisorId}")
-	public Advisor updateTheEmployees(@Valid @RequestBody Advisor advisor, @PathVariable Long advisorId) {
-		advisor.setId(advisorId);
-		return this.serviceAdvisor.updateAdvisor(advisor);
+	public ResponseEntity<Advisor> updateTheAdvisor(@Valid @RequestBody Advisor advisor, @PathVariable Long advisorId) {
+		try {
+			advisor.setId(advisorId);
+			Advisor updatedAdvisor = this.serviceAdvisor.updateAdvisor(advisor);
+			return new ResponseEntity<Advisor>(updatedAdvisor, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Advisor>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 	/* **** DELETE **** */
 	@DeleteMapping("/{advisorId}")
-	public void deleteClientByID(@PathVariable Long advisorId) {
-		this.serviceAdvisor.deleteAdvisorById(advisorId);
+	public ResponseEntity<String> deleteAdvisorById(@PathVariable Long advisorId) {
+		try {
+			this.serviceAdvisor.deleteAdvisorById(advisorId);
+			return new ResponseEntity<>("Advisor " + advisorId + " deleted.", HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
+	
+	@DeleteMapping("/{advisorId}/deleteClient/{clientId}")
+	public ResponseEntity<String> deleteClientOfAdvisorById(@PathVariable Long advisorId, @PathVariable Long clientId) {
+	    try {
+	        this.serviceAdvisor.deleteClientOfAdvisorById(advisorId, clientId);
+	        return new ResponseEntity<>("{\"message\":\"Client " + clientId + " of Advisor " + advisorId + " deleted.\"}", HttpStatus.OK);
+	    } catch (Exception e) {
+	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	}
+
+	
 }
