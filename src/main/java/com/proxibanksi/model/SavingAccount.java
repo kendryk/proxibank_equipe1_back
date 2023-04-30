@@ -2,7 +2,6 @@ package com.proxibanksi.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Positive;
 
 @Entity
 @DiscriminatorValue("saving")
@@ -16,7 +15,7 @@ public class SavingAccount extends Account {
 
 	}
 
-	public SavingAccount( Double balance) {
+	public SavingAccount(Double balance) {
 		super(balance);
 
 	}

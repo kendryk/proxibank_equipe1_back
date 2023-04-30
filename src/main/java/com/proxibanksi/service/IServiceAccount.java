@@ -5,9 +5,9 @@ import java.util.List;
 import com.proxibanksi.model.Account;
 
 public interface IServiceAccount {
-	
-	
+
 	List<Account> getAllClientsAccount();
-	List<Account>getAudit();
+
+	List<Account> getAudit();
 
 }
