@@ -8,10 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.proxibanksi.exception.ClientNotFoundException;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
 import com.proxibanksi.repository.IAdvisorDAO;
-
 
 @Service("Advisor")
 public class ServiceImplementAdvisor implements IServiceAdvisor {
@@ -108,7 +108,7 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	}
 
 	@Override
-	public void addClientToAdvisorByID(Long advisorId, Client client) {
+	public void addClientToAdvisorById(Long advisorId, Client client) {
 		try {
 
 			Advisor advisor = advisorDAO.findById(advisorId).get();
@@ -122,7 +122,6 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 
 			Client newClient = new Client(name, firstname, address, postcode, city, tel);
 			LOG.info("ServiceConseiller : nouveau client :" + newClient);
-
 
 			Set<Client> listClients = advisor.getClients();
 
@@ -145,6 +144,40 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		} catch (Exception e) {
 			LOG.error(e.getMessage());
 
+		}
+	}
+
+	public void updateClientOfAdvisorById(Long advisorId, Long clientId, Client client) {
+		try {
+
+			// récupérer le conseiller
+			Advisor advisor = advisorDAO.findById(advisorId).get();
+			
+			// récupérer le client
+			Set<Client> clients = advisor.getClients();
+			
+			// mettre à jour les informations du client en vérifiant que le client demandé appartient au conseiller
+			for (Client c : clients) {
+				if (c.getId().equals(clientId)) {
+					c.setName(client.getName());
+					c.setFirstName(client.getFirstName());
+					c.setAdress(client.getAdress());
+					c.setZipCode(client.getZipCode());
+					c.setCity(client.getCity());
+					c.setPhone(client.getPhone());
+
+					advisorDAO.save(advisor);
+
+					LOG.info("ServiceConseiller : client mis à jour avec succès");
+
+					return;
+				}
+			}
+
+			throw new ClientNotFoundException(
+					"Client not found for advisor id=" + advisorId + " and client id=" + clientId);
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
 		}
 	}
 
