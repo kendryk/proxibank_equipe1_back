@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proxibanksi.exception.AdvisorNotFoundException;
+import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
 import com.proxibanksi.service.IServiceAdvisor;
@@ -61,6 +62,11 @@ public class RestAdvisorController {
 	public List<Advisor> getAdvisors() {
 		return this.serviceAdvisor.getAllAdvisors();
 	}
+
+	@GetMapping("/{advisorId}/clients/{clientId}/accounts")
+    public Set<Account> getAccountsByClientId(@PathVariable Long advisorId, @PathVariable Long clientId) {
+        return this.serviceAdvisor.getAccountsByClientId(advisorId, clientId);
+    }
 
 	@GetMapping("/{id}")
 	public Advisor getAdvisorById(@PathVariable(name = "id") Long advisorId) throws AdvisorNotFoundException {

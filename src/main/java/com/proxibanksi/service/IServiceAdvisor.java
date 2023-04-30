@@ -3,6 +3,7 @@ package com.proxibanksi.service;
 import java.util.List;
 import java.util.Set;
 
+import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
 
@@ -24,5 +25,7 @@ public interface IServiceAdvisor {
 	void addClientToAdvisorById(Long advisorId, Client client);
 
 	void updateClientOfAdvisorById(Long advisorId, Long clientId, Client client);
+	
+	Set<Account> getAccountsByClientId(Long advisorId, Long clientId);
 	
 }
