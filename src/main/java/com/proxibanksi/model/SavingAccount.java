@@ -16,7 +16,7 @@ public class SavingAccount extends Account {
 
 	}
 
-	public SavingAccount(@Positive Double balance) {
+	public SavingAccount( Double balance) {
 		super(balance);
 
 	}

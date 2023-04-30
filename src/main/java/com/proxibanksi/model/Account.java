@@ -33,7 +33,7 @@ public class Account {
 
 	protected String number;
 
-	@Positive
+
 	protected Double balance;
 
 	@PastOrPresent
@@ -50,7 +50,7 @@ public class Account {
 	public Account() {
 	}
 
-	public Account(@Positive Double balance) {
+	public Account( Double balance) {
 		nbAccountOpen++;
 		this.number = getAccountNumberAsString();
 		this.balance = balance;

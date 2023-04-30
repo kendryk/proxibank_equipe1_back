@@ -59,12 +59,12 @@ public class DBInit {
 
 		/************* init accounts *************/
 		Account CurrentAccount1 = new CurrentAccount(5000.0);
-		Account CurrentAccount2 = new CurrentAccount(3000.0);
+		Account CurrentAccount2 = new CurrentAccount(-3000.0);
 		Account CurrentAccount3 = new CurrentAccount(500.0);
-		Account CurrentAccount4 = new CurrentAccount(2000.0);
+		Account CurrentAccount4 = new CurrentAccount(-2000.0);
 		Account CurrentAccount5 = new CurrentAccount(3000.0);
 		Account CurrentAccount6 = new CurrentAccount(50.0);
-		Account CurrentAccount7 = new CurrentAccount(1500.0);
+		Account CurrentAccount7 = new CurrentAccount(-1500.0);
 		Account CurrentAccount8 = new CurrentAccount(2500.0);
 		Account CurrentAccount9 = new CurrentAccount(5000.0);
 		Account CurrentAccount10 = new CurrentAccount(10000.0);
