@@ -1,6 +1,8 @@
 package com.proxibanksi.model;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -14,6 +16,7 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.PastOrPresent;
 
@@ -43,6 +46,9 @@ public class Account {
 	@JoinColumn(name = "owner_id")
 	@JsonIgnore
 	protected Client owner;
+	
+	@OneToMany(mappedBy = "account", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private Set<Transfert> transferts = new HashSet<>();
 
 	/* ************** CONSTRUCTORS ******************* */
 	public Account() {
@@ -60,6 +66,16 @@ public class Account {
 
 	public String getAccountNumberAsString() {
 		return String.format("%05d", nbAccountOpen);
+	}
+
+	public void addTransfert(Transfert transfert) {
+		transferts.add(transfert);
+		transfert.setAccount(this);;
+	}
+
+	public void removeTransfert(Transfert transfert) {
+		transferts.remove(transfert);
+		transfert.setAccount(null);;
 	}
 
 	/* ************** GETTERS SETTERS ******************* */

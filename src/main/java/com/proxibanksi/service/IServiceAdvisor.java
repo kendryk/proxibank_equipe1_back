@@ -3,10 +3,13 @@ package com.proxibanksi.service;
 import java.util.List;
 import java.util.Set;
 
+import com.proxibanksi.dtos.TransfertRequestDTO;
 import com.proxibanksi.exception.DataNotFoundException;
+import com.proxibanksi.exception.TransfertNotFoundException;
 import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
+import com.proxibanksi.model.Transfert;
 
 public interface IServiceAdvisor {
 
@@ -34,4 +37,14 @@ public interface IServiceAdvisor {
 
 	Account addSavingsAccountToClient(Long advisorId, Long clientId) throws Exception;
 
+//	List<Transfert> transfert(Long advisorId, Long clientId, TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException;
+
+	Transfert credit(Account account, double amount, String label);
+
+	Transfert debit(Account account, double amount, String label);
+
+	List<Transfert> transfert(Account sourceAccount, Account destinationAccount,
+			TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException;
+	
+	List<Transfert> transferBetweenAccounts(Long advisorId, Long clientId,TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException;
 }

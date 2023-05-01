@@ -21,9 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proxibanksi.dtos.TransfertRequestDTO;
 import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
+import com.proxibanksi.model.Transfert;
 import com.proxibanksi.service.IServiceAdvisor;
 
 import jakarta.validation.Valid;
@@ -87,11 +89,6 @@ public class RestAdvisorController {
 		}
 	}
 
-//	@GetMapping("/{advisorId}/listClient")
-//	public Set<Client> getAllClientsByAdvisorId(@PathVariable Long advisorId) {
-//		return this.serviceAdvisor.getAllClientsByAdvisorId(advisorId);
-//	}
-
 	/* **** POST **** */
 	@PostMapping
 	public ResponseEntity<Advisor> addAdvisor(@Valid @RequestBody Advisor advisor) {
@@ -124,7 +121,20 @@ public class RestAdvisorController {
 		}
 	}
 
+	@PostMapping("/{advisorId}/clients/{clientId}/accounts/transferBetweenAccounts")
+	public ResponseEntity<List<Transfert>> transferBetweenAccounts(@PathVariable Long advisorId, @PathVariable Long clientId,
+			@RequestBody TransfertRequestDTO transfertRequestDTO) {
+		try {
+			List<Transfert> transfert = this.serviceAdvisor.transferBetweenAccounts(advisorId, clientId, transfertRequestDTO);
+
+			return new ResponseEntity<List<Transfert>>(transfert, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<List<Transfert>>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 	/* **** PUT **** */
+
 	@PutMapping("/{advisorId}/updateClient/{clientId}")
 	public ResponseEntity<Client> updateClientOfAdvisorById(@PathVariable Long advisorId, @PathVariable Long clientId,
 			@RequestBody Client client) {
@@ -162,7 +172,7 @@ public class RestAdvisorController {
 	public ResponseEntity<Client> deleteClientOfAdvisorById(@PathVariable Long advisorId, @PathVariable Long clientId) {
 		try {
 			Client clientdelete = this.serviceAdvisor.deleteClientOfAdvisorById(advisorId, clientId);
-			return new ResponseEntity<Client>(clientdelete , HttpStatus.OK);
+			return new ResponseEntity<Client>(clientdelete, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}

@@ -10,14 +10,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.proxibanksi.dtos.TransfertRequestDTO;
 import com.proxibanksi.exception.ClientNotFoundException;
 import com.proxibanksi.exception.DataNotFoundException;
+import com.proxibanksi.exception.TransfertNotFoundException;
 import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
+import com.proxibanksi.model.CurrentAccount;
 import com.proxibanksi.model.SavingAccount;
+import com.proxibanksi.model.Transfert;
+import com.proxibanksi.model.TransfertType;
+import com.proxibanksi.repository.AccountDao;
 import com.proxibanksi.repository.ClientDao;
 import com.proxibanksi.repository.IAdvisorDAO;
+import com.proxibanksi.repository.TransfertDao;
 
 @Service("Advisor")
 public class ServiceImplementAdvisor implements IServiceAdvisor {
@@ -27,12 +34,15 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	private final IAdvisorDAO advisorDAO;
 	private final ClientDao clientDAO;
 	private final IServiceClient serviceClient;
+	private final AccountDao accountDAO;
 
 	/* ************** CONSTRUCTORS ******************* */
-	public ServiceImplementAdvisor(IAdvisorDAO advisorDAO, ClientDao clientDAO, IServiceClient serviceClient) {
+	public ServiceImplementAdvisor(IAdvisorDAO advisorDAO, ClientDao clientDAO, IServiceClient serviceClient,
+			AccountDao accountDAO, TransfertDao transfertDAO) {
 		this.serviceClient = serviceClient;
 		this.clientDAO = clientDAO;
 		this.advisorDAO = advisorDAO;
+		this.accountDAO = accountDAO;
 
 	}
 
@@ -43,7 +53,6 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		List<Advisor> advisors = new ArrayList<>();
 
 		try {
-
 			advisors = advisorDAO.findAll();
 
 		} catch (Exception e) {
@@ -220,15 +229,15 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 				.orElseThrow(() -> new DataNotFoundException("Client not found"));
 
 		Client clientDelete = client;
-		
+
 		// supprime le client du conseiller
 		advisor.removeClient(client);
 
 		// supprime le client de la base de données
 		this.serviceClient.removeClientById(clientId);
-		
+
 		return clientDelete;
-		
+
 	}
 
 	@Override
@@ -254,4 +263,94 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 
 		return savingAccount;
 	}
+
+	@Override
+	public List<Transfert> transferBetweenAccounts(Long advisorId, Long clientId,
+			TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException {
+
+		// Vérification de l'identité de l'advisor
+		Client client = clientDAO.findById(clientId)
+				.orElseThrow(() -> new TransfertNotFoundException("Client introuvable"));
+
+		if (!client.getAdvisor().getId().equals(advisorId)) {
+			throw new TransfertNotFoundException(
+					"Le conseiller n'est pas autorisé à effectuer un transfert pour ce client.");
+		}
+
+		// récupere des comptes source et destination
+		Account sourceAccount = accountDAO.findById(transfertRequestDTO.getAccountSourceId())
+				.orElseThrow(() -> new TransfertNotFoundException("compte source introuvable"));
+
+		Account destinationAccount = accountDAO.findById(transfertRequestDTO.getAccountDestinationId())
+				.orElseThrow(() -> new TransfertNotFoundException("compte destination introuvable"));
+
+		// on vérife que les comptes ne sont pas les mêmes:
+		if (sourceAccount.getId().equals(destinationAccount.getId())) {
+			throw new TransfertNotFoundException("Les comptes sources et destinations ne peuvent pas être les mêmes. ");
+		}
+		
+		// on vérifie que le transfert ne se fait pas d'un compte épargne vers un compte courant ou épargne d'un autre client
+		if (sourceAccount instanceof SavingAccount && 
+		    (destinationAccount instanceof CurrentAccount || destinationAccount instanceof SavingAccount) &&
+		    !sourceAccount.getOwner().equals(destinationAccount.getOwner())) {
+		    throw new TransfertNotFoundException("Le transfert d'un compte épargne vers un compte courant ou épargne d'un autre client est interdit.");
+		}
+
+		// on vérifie que le transfert ne se fait pas entre deux comptes épargne
+		if (sourceAccount instanceof SavingAccount && destinationAccount instanceof SavingAccount) {
+			throw new TransfertNotFoundException("Le transfert ne peut pas être effectué entre deux comptes épargne.");
+		}
+
+		// on vérife que la demande de transfert n'est pas inferieur à la balance du
+		// compte source
+		if (sourceAccount.getBalance().compareTo(transfertRequestDTO.getAmount()) < 0) {
+			throw new TransfertNotFoundException("Solde insuffisant sur le compte source.");
+		}
+
+		return this.transfert(sourceAccount, destinationAccount, transfertRequestDTO);
+	}
+
+	public List<Transfert> transfert(Account sourceAccount, Account destinationAccount,
+			TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException {
+
+		// creation du transfert:
+		Transfert transfertDebit = this.debit(sourceAccount, transfertRequestDTO.getAmount(),
+				"Transfer to " + destinationAccount);
+		Transfert transfertCredit = this.credit(destinationAccount, transfertRequestDTO.getAmount(),
+				"Transfer from " + sourceAccount);
+
+		List<Transfert> transferts = new ArrayList<>();
+		transferts.add(transfertDebit);
+		transferts.add(transfertCredit);
+		return transferts;
+	}
+
+	@Override
+	public Transfert credit(Account account, double amount, String label) {
+
+		Transfert transfert = new Transfert(amount, label, TransfertType.CREDIT, account);
+
+		account.addTransfert(transfert);
+
+		account.setBalance(account.getBalance() + amount);
+
+		accountDAO.save(account);
+
+		return transfert;
+	}
+
+	@Override
+	public Transfert debit(Account account, double amount, String label) {
+
+		Transfert transfert = new Transfert(amount, label, TransfertType.DEBIT, account);
+
+		account.addTransfert(transfert);
+
+		account.setBalance(account.getBalance() - amount);
+
+		accountDAO.save(account);
+
+		return transfert;
+	}
+
 }

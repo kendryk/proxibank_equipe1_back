@@ -51,5 +51,11 @@ public class RestAccountController {
 	ResponseEntity<Iterable<Account>> getOverDraft() {
 		return ResponseEntity.ok().body(serviceAccount.getAudit());
 	}
+	
+	// possibilité de voir les transferts
+//	@GetMapping("/accounts/{accountId}/operations")
+//	ResponseEntity<Iterable<Transfert>> getHistory(@PathVariable String accountId){
+//        return this.serviceAccount.accountHistory(accountId);
+//    }
 
 }
