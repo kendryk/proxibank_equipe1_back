@@ -69,32 +69,37 @@ public class RestAdvisorController {
 
 	@GetMapping("/{advisorId}")
 	public ResponseEntity<Advisor> getAdvisorById(@PathVariable Long advisorId) {
-	    try {
-	        Advisor advisor = this.serviceAdvisor.getAdvisorById(advisorId);
-	        return new ResponseEntity<>(advisor, HttpStatus.OK);
-	    } catch (Exception e) {
-	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
+		try {
+			Advisor advisor = this.serviceAdvisor.getAdvisorById(advisorId);
+			return new ResponseEntity<Advisor>(advisor, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Advisor>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
-	
+
 	@GetMapping("/{advisorId}/listClients")
 	public ResponseEntity<Set<Client>> getAllClientsByAdvisorId(@PathVariable Long advisorId) {
-	    try {
-	        Set<Client> clients = this.serviceAdvisor.getAllClientsByAdvisorId(advisorId);
-	        return new ResponseEntity<>(clients, HttpStatus.OK);
-	    } catch (Exception e) {
-	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
+		try {
+			Set<Client> clients = this.serviceAdvisor.getAllClientsByAdvisorId(advisorId);
+			return new ResponseEntity<Set<Client>>(clients, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Set<Client>>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
+
+//	@GetMapping("/{advisorId}/listClient")
+//	public Set<Client> getAllClientsByAdvisorId(@PathVariable Long advisorId) {
+//		return this.serviceAdvisor.getAllClientsByAdvisorId(advisorId);
+//	}
 
 	/* **** POST **** */
 	@PostMapping
 	public ResponseEntity<Advisor> addAdvisor(@Valid @RequestBody Advisor advisor) {
 		try {
 			Advisor addedAdvisor = this.serviceAdvisor.addAdvisor(advisor);
-			return new ResponseEntity<>(addedAdvisor, HttpStatus.CREATED);
+			return new ResponseEntity<Advisor>(addedAdvisor, HttpStatus.CREATED);
 		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Advisor>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -105,6 +110,17 @@ public class RestAdvisorController {
 			return new ResponseEntity<Client>(client, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@PostMapping("/{advisorId}/clients/{clientId}/savingsAccount")
+	public ResponseEntity<Account> addSavingsAccountToClient(@PathVariable Long advisorId,
+			@PathVariable Long clientId) {
+		try {
+			Account account = this.serviceAdvisor.addSavingsAccountToClient(advisorId, clientId);
+			return new ResponseEntity<Account>(account, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Account>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -141,16 +157,15 @@ public class RestAdvisorController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@DeleteMapping("/{advisorId}/deleteClient/{clientId}")
-	public ResponseEntity<String> deleteClientOfAdvisorById(@PathVariable Long advisorId, @PathVariable Long clientId) {
-	    try {
-	        this.serviceAdvisor.deleteClientOfAdvisorById(advisorId, clientId);
-	        return new ResponseEntity<>("{\"message\":\"Client " + clientId + " of Advisor " + advisorId + " deleted.\"}", HttpStatus.OK);
-	    } catch (Exception e) {
-	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
+	public ResponseEntity<Client> deleteClientOfAdvisorById(@PathVariable Long advisorId, @PathVariable Long clientId) {
+		try {
+			Client clientdelete = this.serviceAdvisor.deleteClientOfAdvisorById(advisorId, clientId);
+			return new ResponseEntity<Client>(clientdelete , HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
-	
 }

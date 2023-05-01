@@ -15,6 +15,8 @@ import com.proxibanksi.exception.DataNotFoundException;
 import com.proxibanksi.model.Account;
 import com.proxibanksi.model.Advisor;
 import com.proxibanksi.model.Client;
+import com.proxibanksi.model.SavingAccount;
+import com.proxibanksi.repository.ClientDao;
 import com.proxibanksi.repository.IAdvisorDAO;
 
 @Service("Advisor")
@@ -22,12 +24,14 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ServiceImplementAdvisor.class);
 
-	private IAdvisorDAO advisorDAO;
+	private final IAdvisorDAO advisorDAO;
+	private final ClientDao clientDAO;
 	private final IServiceClient serviceClient;
 
 	/* ************** CONSTRUCTORS ******************* */
-	public ServiceImplementAdvisor(IAdvisorDAO advisorDAO, IServiceClient serviceClient) {
+	public ServiceImplementAdvisor(IAdvisorDAO advisorDAO, ClientDao clientDAO, IServiceClient serviceClient) {
 		this.serviceClient = serviceClient;
+		this.clientDAO = clientDAO;
 		this.advisorDAO = advisorDAO;
 
 	}
@@ -208,17 +212,46 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 	}
 
 	@Override
-	public void deleteClientOfAdvisorById(Long advisorId, Long clientId) throws DataNotFoundException {
+	public Client deleteClientOfAdvisorById(Long advisorId, Long clientId) throws DataNotFoundException {
 		Advisor advisor = advisorDAO.findById(advisorId)
 				.orElseThrow(() -> new DataNotFoundException("Advisor not found"));
 
 		Client client = advisor.getClients().stream().filter(c -> c.getId().equals(clientId)).findFirst()
 				.orElseThrow(() -> new DataNotFoundException("Client not found"));
 
+		Client clientDelete = client;
+		
 		// supprime le client du conseiller
 		advisor.removeClient(client);
 
 		// supprime le client de la base de données
 		this.serviceClient.removeClientById(clientId);
+		
+		return clientDelete;
+		
+	}
+
+	@Override
+	public Account addSavingsAccountToClient(Long advisorId, Long clientId) throws Exception {
+		// récupérer l'advisor correspondant à l'id
+		Advisor advisor = this.advisorDAO.findById(advisorId)
+				.orElseThrow(() -> new DataNotFoundException("Advisor not found"));
+
+		Client client = advisor.getClients().stream().filter(c -> c.getId().equals(clientId)).findFirst()
+				.orElseThrow(() -> new DataNotFoundException("Client not found"));
+
+		// vérifier si le client a déjà un compte épargne
+		long count = client.getAccountList().stream().filter(account -> account instanceof SavingAccount).count();
+
+		if (count > 0) {
+			throw new Exception("Le client a déjà un compte épargne");
+		}
+
+		// créer un nouveau compte épargne et l'ajouter au client
+		SavingAccount savingAccount = new SavingAccount(0.0);
+		client.addAccount(savingAccount);
+		this.clientDAO.save(client);
+
+		return savingAccount;
 	}
 }

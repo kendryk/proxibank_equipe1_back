@@ -30,6 +30,8 @@ public interface IServiceAdvisor {
 
 	boolean isAdvisorExist(Long id);
 
-	void deleteClientOfAdvisorById(Long advisorId, Long clientId) throws DataNotFoundException;
+	Client deleteClientOfAdvisorById(Long advisorId, Long clientId) throws DataNotFoundException;
+
+	Account addSavingsAccountToClient(Long advisorId, Long clientId) throws Exception;
 
 }
