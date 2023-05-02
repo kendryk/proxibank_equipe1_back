@@ -146,3 +146,507 @@
 2023-05-02T08:32:30.662+02:00  INFO 31408 --- [RMI TCP Connection(264)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-05-02T08:32:30.662+02:00  INFO 31408 --- [RMI TCP Connection(264)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
 2023-05-02T08:32:30.663+02:00  INFO 31408 --- [RMI TCP Connection(264)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2023-05-02T09:16:42.667+02:00  INFO 37424 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 37424 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T09:16:42.672+02:00  INFO 37424 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T09:16:42.736+02:00  INFO 37424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02T09:16:42.736+02:00  INFO 37424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02T09:16:43.610+02:00  INFO 37424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T09:16:43.720+02:00  INFO 37424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 4 JPA repository interfaces.
+2023-05-02T09:16:44.490+02:00  INFO 37424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T09:16:44.506+02:00  INFO 37424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T09:16:44.506+02:00  INFO 37424 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T09:16:44.595+02:00  INFO 37424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T09:16:44.596+02:00  INFO 37424 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1859 ms
+2023-05-02T09:16:44.629+02:00  INFO 37424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-02T09:16:44.826+02:00  INFO 37424 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1336c7a2
+2023-05-02T09:16:44.828+02:00  INFO 37424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-02T09:16:44.840+02:00  INFO 37424 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T09:16:45.000+02:00  INFO 37424 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T09:16:45.091+02:00  INFO 37424 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-02T09:16:45.686+02:00  INFO 37424 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T09:16:46.958+02:00  INFO 37424 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T09:16:46.970+02:00  INFO 37424 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T09:16:47.522+02:00  WARN 37424 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T09:16:47.884+02:00  INFO 37424 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T09:16:47.935+02:00  INFO 37424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T09:16:47.950+02:00  INFO 37424 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 5.777 seconds (process running for 6.673)
+2023-05-02T09:17:24.856+02:00  INFO 37424 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T09:17:24.857+02:00  INFO 37424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T09:17:24.859+02:00  INFO 37424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-02T09:18:06.325+02:00  INFO 37424 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-02T09:18:06.337+02:00  INFO 37424 --- [RMI TCP Connection(5)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T09:18:06.337+02:00  INFO 37424 --- [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T09:18:06.344+02:00  INFO 37424 --- [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T09:18:06.347+02:00  INFO 37424 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-02T09:18:06.350+02:00  INFO 37424 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-02T09:18:09.329+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T09:18:09.331+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T09:18:09.386+02:00  INFO 11908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02T09:18:09.386+02:00  INFO 11908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02T09:18:10.067+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T09:18:10.143+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2023-05-02T09:18:10.687+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T09:18:10.696+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T09:18:10.696+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T09:18:10.764+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T09:18:10.764+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1378 ms
+2023-05-02T09:18:10.792+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-02T09:18:10.972+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3566766b
+2023-05-02T09:18:10.974+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-02T09:18:10.985+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T09:18:11.103+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T09:18:11.161+02:00  INFO 11908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-02T09:18:11.468+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T09:18:12.639+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T09:18:12.656+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T09:18:13.168+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T09:18:13.450+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T09:18:13.490+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T09:18:13.500+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 4.621 seconds (process running for 5.492)
+2023-05-02T09:18:21.146+02:00  INFO 11908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T09:18:21.146+02:00  INFO 11908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T09:18:21.148+02:00  INFO 11908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-02T09:45:00.477+02:00  INFO 11908 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : nouveau client :Client [id=null, name=Martin, firstName=pierre, adress=24 allee des croix, zipCode=35350, city=testCity, phone=0665989749]
+2023-05-02T09:45:00.490+02:00  INFO 11908 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client rajouté au conseiller en Base de Donnée avec succès
+2023-05-02T09:46:16.223+02:00  INFO 11908 --- [http-nio-8080-exec-8] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-05-02T09:46:37.232+02:00  INFO 11908 --- [http-nio-8080-exec-1] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client mis à jour avec succès
+2023-05-02T09:47:08.015+02:00  INFO 11908 --- [http-nio-8080-exec-5] c.proxibanksi.service.ServiceImplClient  : ClientServiceImpl : Client supprimé avec succès dans la base de données!!!!
+2023-05-02T09:49:24.739+02:00  INFO 11908 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer to account:00001
+2023-05-02T09:49:24.744+02:00  INFO 11908 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer from account:00011
+2023-05-02T10:42:55.887+02:00  INFO 11908 --- [http-nio-8080-exec-1] c.proxibanksi.service.ServiceImplClient  : ClientServiceImpl : Client supprimé avec succès dans la base de données!!!!
+2023-05-02T10:44:54.053+02:00  INFO 11908 --- [http-nio-8080-exec-6] c.proxibanksi.service.ServiceImplClient  : ClientServiceImpl : Client supprimé avec succès dans la base de données!!!!
+2023-05-02T10:45:21.251+02:00  INFO 11908 --- [http-nio-8080-exec-10] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : nouveau client :Client [id=null, name=Martin, firstName=cedric, adress=24 allee des croix, zipCode=35350, city=testCity, phone=1234567891]
+2023-05-02T10:45:21.255+02:00  INFO 11908 --- [http-nio-8080-exec-10] c.p.service.ServiceImplementAdvisor      : ServiceConseiller : client rajouté au conseiller en Base de Donnée avec succès
+2023-05-02T12:31:06.216+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:31:06.260+02:00  INFO 11908 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:31:06.264+02:00  INFO 11908 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T12:31:06.287+02:00  INFO 11908 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:31:06.297+02:00  INFO 11908 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-02T12:31:06.303+02:00  INFO 11908 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-02T12:31:06.506+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:31:06.507+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:31:06.688+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:31:06.707+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:31:06.798+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:31:06.798+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:31:06.798+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:31:06.818+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:31:06.818+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 308 ms
+2023-05-02T12:31:06.830+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-02T12:31:06.884+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@674dcb57
+2023-05-02T12:31:06.884+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-02T12:31:06.884+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:31:06.908+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:31:06.926+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:31:07.164+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:31:07.165+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:31:07.334+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:31:07.429+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:31:07.439+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:31:07.443+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.981 seconds (process running for 11579.434)
+2023-05-02T12:31:07.445+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:31:31.460+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:31:31.470+02:00  INFO 11908 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:31:31.473+02:00  INFO 11908 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:31:31.473+02:00  INFO 11908 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-02T12:31:31.475+02:00  INFO 11908 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-02T12:31:31.555+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:31:31.555+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:31:31.696+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:31:31.714+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:31:31.776+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:31:31.777+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:31:31.777+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:31:31.793+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:31:31.793+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 237 ms
+2023-05-02T12:31:31.805+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-05-02T12:31:31.859+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@649f9767
+2023-05-02T12:31:31.859+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-05-02T12:31:31.859+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:31:31.877+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:31:31.894+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:31:32.061+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:31:32.063+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:31:32.200+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:31:32.266+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:31:32.274+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:31:32.277+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.742 seconds (process running for 11604.269)
+2023-05-02T12:31:32.278+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:31:57.356+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2023-05-02T12:31:57.365+02:00  INFO 11908 --- [Thread-11] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:31:57.368+02:00  INFO 11908 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:31:57.368+02:00  INFO 11908 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-05-02T12:31:57.369+02:00  INFO 11908 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-05-02T12:31:57.450+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:31:57.450+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:31:57.586+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:31:57.601+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:31:57.658+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:31:57.659+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:31:57.659+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:31:57.673+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:31:57.673+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 222 ms
+2023-05-02T12:31:57.683+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-05-02T12:31:57.737+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@f1ffe0d
+2023-05-02T12:31:57.737+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-05-02T12:31:57.737+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:31:57.758+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:31:57.771+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:31:57.980+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:31:57.981+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:31:58.148+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:31:58.211+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:31:58.221+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:31:58.224+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.793 seconds (process running for 11630.215)
+2023-05-02T12:31:58.225+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:33:20.603+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:33:20.613+02:00  INFO 11908 --- [Thread-15] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:33:20.617+02:00  INFO 11908 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:33:20.617+02:00  INFO 11908 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-05-02T12:33:20.618+02:00  INFO 11908 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-05-02T12:33:20.697+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:33:20.697+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:33:20.833+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:33:20.847+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:33:20.904+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:33:20.905+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:33:20.905+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:33:20.919+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:33:20.919+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 220 ms
+2023-05-02T12:33:20.928+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-05-02T12:33:20.981+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@3dd853c1
+2023-05-02T12:33:20.981+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-05-02T12:33:20.982+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:33:20.999+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:33:21.015+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:33:21.174+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:33:21.174+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:33:21.319+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:33:21.382+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:33:21.393+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:33:21.396+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.718 seconds (process running for 11713.387)
+2023-05-02T12:33:21.397+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:33:31.007+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:33:31.015+02:00  INFO 11908 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:33:31.018+02:00  INFO 11908 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:33:31.019+02:00  INFO 11908 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-05-02T12:33:31.020+02:00  INFO 11908 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-05-02T12:33:31.095+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:33:31.096+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:33:31.235+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:33:31.250+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:33:31.315+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:33:31.315+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:33:31.315+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:33:31.329+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:33:31.329+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 232 ms
+2023-05-02T12:33:31.339+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-05-02T12:33:31.393+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@1cdbbb78
+2023-05-02T12:33:31.393+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-05-02T12:33:31.393+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:33:31.413+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:33:31.425+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:33:31.581+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:33:31.582+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:33:31.721+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:33:31.798+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:33:31.808+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:33:31.811+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.733 seconds (process running for 11723.802)
+2023-05-02T12:33:31.812+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:34:23.482+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:34:23.491+02:00  INFO 11908 --- [Thread-23] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:34:23.494+02:00  INFO 11908 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:34:23.494+02:00  INFO 11908 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-05-02T12:34:23.496+02:00  INFO 11908 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-05-02T12:34:23.571+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:34:23.571+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:34:23.706+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:34:23.720+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:34:23.775+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:34:23.776+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:34:23.776+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:34:23.791+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:34:23.791+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 218 ms
+2023-05-02T12:34:23.800+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-05-02T12:34:23.856+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@750063af
+2023-05-02T12:34:23.856+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-05-02T12:34:23.857+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:34:23.879+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:34:23.892+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:34:24.046+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:34:24.046+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:34:24.167+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:34:24.221+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:34:24.230+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:34:24.233+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.68 seconds (process running for 11776.224)
+2023-05-02T12:34:24.234+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:34:34.915+02:00  INFO 11908 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:34:34.925+02:00  INFO 11908 --- [Thread-27] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:34:34.928+02:00  INFO 11908 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:34:34.928+02:00  INFO 11908 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-05-02T12:34:34.929+02:00  INFO 11908 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-05-02T12:34:35.005+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 11908 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:34:35.005+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:34:35.139+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:34:35.151+02:00  INFO 11908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:34:35.206+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:34:35.207+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:34:35.207+02:00  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:34:35.222+02:00  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:34:35.222+02:00  INFO 11908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 216 ms
+2023-05-02T12:34:35.231+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2023-05-02T12:34:35.283+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@41bdc845
+2023-05-02T12:34:35.283+02:00  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2023-05-02T12:34:35.283+02:00  INFO 11908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:34:35.303+02:00  INFO 11908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:34:35.316+02:00  INFO 11908 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:34:35.467+02:00  INFO 11908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:34:35.467+02:00  INFO 11908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:34:35.600+02:00  WARN 11908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:34:35.661+02:00  INFO 11908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:34:35.673+02:00  INFO 11908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:34:35.676+02:00  INFO 11908 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.688 seconds (process running for 11787.667)
+2023-05-02T12:34:35.677+02:00  INFO 11908 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:36:03.543+02:00  INFO 11908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T12:36:03.543+02:00  INFO 11908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T12:36:03.544+02:00  INFO 11908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-02T12:36:03.555+02:00  WARN 11908 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'clientId' for method parameter type Long is not present]
+2023-05-02T12:36:32.233+02:00  WARN 11908 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'clientId' for method parameter type Long is not present]
+2023-05-02T12:37:56.336+02:00  INFO 11908 --- [RMI TCP Connection(204)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-02T12:37:56.345+02:00  INFO 11908 --- [RMI TCP Connection(204)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:37:56.346+02:00  INFO 11908 --- [RMI TCP Connection(204)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T12:37:56.349+02:00  INFO 11908 --- [RMI TCP Connection(204)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:37:56.349+02:00  INFO 11908 --- [RMI TCP Connection(204)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-05-02T12:37:56.350+02:00  INFO 11908 --- [RMI TCP Connection(204)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-05-02T12:38:00.455+02:00  INFO 13224 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 13224 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:38:00.458+02:00  INFO 13224 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:38:00.515+02:00  INFO 13224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02T12:38:00.515+02:00  INFO 13224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02T12:38:01.201+02:00  INFO 13224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:38:01.270+02:00  INFO 13224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:38:01.789+02:00  INFO 13224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:38:01.800+02:00  INFO 13224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:38:01.800+02:00  INFO 13224 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:38:01.886+02:00  INFO 13224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:38:01.887+02:00  INFO 13224 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1371 ms
+2023-05-02T12:38:01.931+02:00  INFO 13224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-02T12:38:02.102+02:00  INFO 13224 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7148b370
+2023-05-02T12:38:02.104+02:00  INFO 13224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-02T12:38:02.114+02:00  INFO 13224 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:38:02.230+02:00  INFO 13224 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:38:02.309+02:00  INFO 13224 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-02T12:38:02.655+02:00  INFO 13224 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:38:03.724+02:00  INFO 13224 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:38:03.739+02:00  INFO 13224 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:38:04.213+02:00  WARN 13224 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:38:04.497+02:00  INFO 13224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:38:04.535+02:00  INFO 13224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:38:04.542+02:00  INFO 13224 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 4.535 seconds (process running for 5.39)
+2023-05-02T12:38:16.879+02:00  INFO 13224 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T12:38:16.879+02:00  INFO 13224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T12:38:16.881+02:00  INFO 13224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-02T12:38:16.950+02:00  WARN 13224 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'clientId' for method parameter type Long is not present]
+2023-05-02T12:39:06.547+02:00  INFO 13224 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:39:06.559+02:00  INFO 13224 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:39:06.561+02:00  INFO 13224 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T12:39:06.568+02:00  INFO 13224 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:39:06.570+02:00  INFO 13224 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-02T12:39:06.572+02:00  INFO 13224 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-02T12:39:06.646+02:00  INFO 13224 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 13224 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:39:06.646+02:00  INFO 13224 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:39:06.807+02:00  INFO 13224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:39:06.830+02:00  INFO 13224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:39:06.925+02:00  INFO 13224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:39:06.925+02:00  INFO 13224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:39:06.925+02:00  INFO 13224 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:39:06.943+02:00  INFO 13224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:39:06.943+02:00  INFO 13224 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 295 ms
+2023-05-02T12:39:06.955+02:00  INFO 13224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-02T12:39:07.018+02:00  INFO 13224 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@2597110
+2023-05-02T12:39:07.018+02:00  INFO 13224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-02T12:39:07.018+02:00  INFO 13224 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:39:07.038+02:00  INFO 13224 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:39:07.052+02:00  INFO 13224 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:39:07.250+02:00  INFO 13224 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:39:07.250+02:00  INFO 13224 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:39:07.402+02:00  WARN 13224 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:39:07.481+02:00  INFO 13224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:39:07.492+02:00  INFO 13224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:39:07.495+02:00  INFO 13224 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.872 seconds (process running for 68.343)
+2023-05-02T12:39:07.496+02:00  INFO 13224 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:39:14.533+02:00  INFO 13224 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T12:39:14.533+02:00  INFO 13224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T12:39:14.534+02:00  INFO 13224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-02T12:39:23.572+02:00  INFO 13224 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-02T12:39:23.584+02:00  INFO 13224 --- [RMI TCP Connection(3)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:39:23.584+02:00  INFO 13224 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T12:39:23.589+02:00  INFO 13224 --- [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:39:23.590+02:00  INFO 13224 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-02T12:39:23.591+02:00  INFO 13224 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-02T12:39:26.885+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 39584 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:39:26.891+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:39:26.962+02:00  INFO 39584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02T12:39:26.962+02:00  INFO 39584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02T12:39:27.627+02:00  INFO 39584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:39:27.695+02:00  INFO 39584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:39:28.252+02:00  INFO 39584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:39:28.261+02:00  INFO 39584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:39:28.263+02:00  INFO 39584 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:39:28.336+02:00  INFO 39584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:39:28.337+02:00  INFO 39584 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1374 ms
+2023-05-02T12:39:28.364+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-02T12:39:28.536+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@16ed8cd4
+2023-05-02T12:39:28.537+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-02T12:39:28.548+02:00  INFO 39584 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:39:28.660+02:00  INFO 39584 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:39:28.712+02:00  INFO 39584 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-02T12:39:29.055+02:00  INFO 39584 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:39:30.102+02:00  INFO 39584 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:39:30.110+02:00  INFO 39584 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:39:30.547+02:00  WARN 39584 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:39:30.839+02:00  INFO 39584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:39:30.884+02:00  INFO 39584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:39:30.893+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 4.463 seconds (process running for 5.251)
+2023-05-02T12:39:37.079+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T12:39:37.080+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T12:39:37.082+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-02T12:40:33.920+02:00  INFO 39584 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:40:33.936+02:00  INFO 39584 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:40:33.937+02:00  INFO 39584 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T12:40:33.943+02:00  INFO 39584 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:40:33.947+02:00  INFO 39584 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-02T12:40:33.952+02:00  INFO 39584 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-02T12:40:34.027+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 39584 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:40:34.027+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:40:34.199+02:00  INFO 39584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:40:34.216+02:00  INFO 39584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:40:34.287+02:00  INFO 39584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:40:34.288+02:00  INFO 39584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:40:34.288+02:00  INFO 39584 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:40:34.305+02:00  INFO 39584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:40:34.305+02:00  INFO 39584 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 276 ms
+2023-05-02T12:40:34.317+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-02T12:40:34.372+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@691e46a7
+2023-05-02T12:40:34.372+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-02T12:40:34.372+02:00  INFO 39584 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:40:34.396+02:00  INFO 39584 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:40:34.411+02:00  INFO 39584 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:40:34.616+02:00  INFO 39584 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:40:34.616+02:00  INFO 39584 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:40:34.778+02:00  WARN 39584 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:40:34.899+02:00  INFO 39584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:40:34.921+02:00  INFO 39584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:40:34.925+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.922 seconds (process running for 69.283)
+2023-05-02T12:40:34.928+02:00  INFO 39584 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:40:41.218+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T12:40:41.218+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T12:40:41.219+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-02T12:41:12.312+02:00  INFO 39584 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-02T12:41:12.322+02:00  INFO 39584 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T12:41:12.322+02:00  INFO 39584 --- [Thread-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T12:41:12.326+02:00  INFO 39584 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:41:12.327+02:00  INFO 39584 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-02T12:41:12.328+02:00  INFO 39584 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-02T12:41:12.413+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 39584 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T12:41:12.413+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T12:41:12.555+02:00  INFO 39584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T12:41:12.570+02:00  INFO 39584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+2023-05-02T12:41:12.633+02:00  INFO 39584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T12:41:12.633+02:00  INFO 39584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T12:41:12.634+02:00  INFO 39584 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T12:41:12.650+02:00  INFO 39584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T12:41:12.650+02:00  INFO 39584 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 234 ms
+2023-05-02T12:41:12.661+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-05-02T12:41:12.713+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@2e47ca34
+2023-05-02T12:41:12.715+02:00  INFO 39584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-05-02T12:41:12.715+02:00  INFO 39584 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T12:41:12.733+02:00  INFO 39584 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T12:41:12.746+02:00  INFO 39584 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T12:41:12.965+02:00  INFO 39584 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T12:41:12.965+02:00  INFO 39584 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T12:41:13.118+02:00  WARN 39584 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T12:41:13.186+02:00  INFO 39584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T12:41:13.198+02:00  INFO 39584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T12:41:13.204+02:00  INFO 39584 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 0.814 seconds (process running for 107.561)
+2023-05-02T12:41:13.206+02:00  INFO 39584 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-02T12:42:22.061+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T12:42:22.062+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T12:42:22.062+02:00  INFO 39584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-02T12:45:41.678+02:00  INFO 39584 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer to account:00001
+2023-05-02T12:45:41.683+02:00  INFO 39584 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer from account:00011
+2023-05-02T12:45:58.512+02:00  INFO 39584 --- [http-nio-8080-exec-4] c.p.service.ServiceImplementAdvisor      : Transfer to account:00011
+2023-05-02T12:45:58.518+02:00  INFO 39584 --- [http-nio-8080-exec-4] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T12:46:47.148+02:00  INFO 39584 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer to account:00001
+2023-05-02T12:46:47.153+02:00  INFO 39584 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer from account:00008
+2023-05-02T12:47:21.846+02:00  INFO 39584 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : Transfer to account:00001
+2023-05-02T12:47:21.852+02:00  INFO 39584 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : Transfer from account:00008
+2023-05-02T13:02:34.584+02:00  INFO 39584 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : Transfer to account:00005
+2023-05-02T13:02:34.588+02:00  INFO 39584 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : Transfer from account:00003
+2023-05-02T13:06:42.131+02:00  INFO 39584 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer to account:00010
+2023-05-02T13:06:42.136+02:00  INFO 39584 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer from account:00007
+2023-05-02T13:07:59.405+02:00  INFO 39584 --- [RMI TCP Connection(32)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-02T13:07:59.414+02:00  INFO 39584 --- [RMI TCP Connection(32)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T13:07:59.414+02:00  INFO 39584 --- [RMI TCP Connection(32)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T13:07:59.418+02:00  INFO 39584 --- [RMI TCP Connection(32)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T13:07:59.419+02:00  INFO 39584 --- [RMI TCP Connection(32)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-05-02T13:07:59.421+02:00  INFO 39584 --- [RMI TCP Connection(32)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-05-02T13:08:01.811+02:00  INFO 20624 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Starting ProxibanksiApplication using Java 17.0.6 with PID 20624 (C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi\target\classes started by Legion in C:\Users\Legion\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\proxibanksi)
+2023-05-02T13:08:01.814+02:00  INFO 20624 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-02T13:08:01.871+02:00  INFO 20624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02T13:08:01.871+02:00  INFO 20624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02T13:08:02.554+02:00  INFO 20624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02T13:08:02.630+02:00  INFO 20624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 4 JPA repository interfaces.
+2023-05-02T13:08:03.166+02:00  INFO 20624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-02T13:08:03.175+02:00  INFO 20624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-02T13:08:03.176+02:00  INFO 20624 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-02T13:08:03.242+02:00  INFO 20624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-02T13:08:03.242+02:00  INFO 20624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1368 ms
+2023-05-02T13:08:03.273+02:00  INFO 20624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-02T13:08:03.551+02:00  INFO 20624 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@735b545e
+2023-05-02T13:08:03.553+02:00  INFO 20624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-02T13:08:03.564+02:00  INFO 20624 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/proxybanksi'
+2023-05-02T13:08:03.678+02:00  INFO 20624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02T13:08:03.737+02:00  INFO 20624 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-02T13:08:04.072+02:00  INFO 20624 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-05-02T13:08:05.096+02:00  INFO 20624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02T13:08:05.107+02:00  INFO 20624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T13:08:05.554+02:00  WARN 20624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02T13:08:05.852+02:00  INFO 20624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-02T13:08:05.892+02:00  INFO 20624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02T13:08:05.902+02:00  INFO 20624 --- [restartedMain] com.proxibanksi.ProxibanksiApplication   : Started ProxibanksiApplication in 4.526 seconds (process running for 5.309)
+2023-05-02T13:08:52.531+02:00  INFO 20624 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02T13:08:52.531+02:00  INFO 20624 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-02T13:08:52.532+02:00  INFO 20624 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-02T13:09:19.474+02:00  INFO 20624 --- [http-nio-8080-exec-2] c.p.service.ServiceImplementAdvisor      : Transfer to account:00010
+2023-05-02T13:09:19.480+02:00  INFO 20624 --- [http-nio-8080-exec-2] c.p.service.ServiceImplementAdvisor      : Transfer from account:00004
+2023-05-02T13:12:52.242+02:00  INFO 20624 --- [http-nio-8080-exec-9] c.p.service.ServiceImplementAdvisor      : Transfer to account:00001
+2023-05-02T13:12:52.248+02:00  INFO 20624 --- [http-nio-8080-exec-9] c.p.service.ServiceImplementAdvisor      : Transfer from account:00004
+2023-05-02T13:12:58.388+02:00  INFO 20624 --- [http-nio-8080-exec-1] c.p.service.ServiceImplementAdvisor      : Transfer to account:00001
+2023-05-02T13:12:58.394+02:00  INFO 20624 --- [http-nio-8080-exec-1] c.p.service.ServiceImplementAdvisor      : Transfer from account:00004
+2023-05-02T13:26:06.587+02:00  INFO 20624 --- [http-nio-8080-exec-9] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:26:06.592+02:00  INFO 20624 --- [http-nio-8080-exec-9] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:29:30.538+02:00  INFO 20624 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:29:30.544+02:00  INFO 20624 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:29:45.442+02:00  INFO 20624 --- [http-nio-8080-exec-7] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:29:45.447+02:00  INFO 20624 --- [http-nio-8080-exec-7] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:29:57.840+02:00  INFO 20624 --- [http-nio-8080-exec-10] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:29:57.843+02:00  INFO 20624 --- [http-nio-8080-exec-10] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:31:47.314+02:00  INFO 20624 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:31:47.318+02:00  INFO 20624 --- [http-nio-8080-exec-5] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:35:10.610+02:00  INFO 20624 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:35:10.615+02:00  INFO 20624 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:38:44.649+02:00  INFO 20624 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:38:44.653+02:00  INFO 20624 --- [http-nio-8080-exec-3] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:39:04.064+02:00  INFO 20624 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : Transfer to account:00004
+2023-05-02T13:39:04.068+02:00  INFO 20624 --- [http-nio-8080-exec-6] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:45:37.133+02:00  INFO 20624 --- [http-nio-8080-exec-8] c.p.service.ServiceImplementAdvisor      : Transfer to account:00011
+2023-05-02T13:45:37.140+02:00  INFO 20624 --- [http-nio-8080-exec-8] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T13:48:49.138+02:00  WARN 20624 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2023-05-02T13:53:56.845+02:00  INFO 20624 --- [http-nio-8080-exec-1] c.p.service.ServiceImplementAdvisor      : Transfer to account:00011
+2023-05-02T13:53:56.849+02:00  INFO 20624 --- [http-nio-8080-exec-1] c.p.service.ServiceImplementAdvisor      : Transfer from account:00001
+2023-05-02T14:02:43.473+02:00  INFO 20624 --- [RMI TCP Connection(57)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-02T14:02:43.486+02:00  INFO 20624 --- [RMI TCP Connection(57)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-02T14:02:43.487+02:00  INFO 20624 --- [RMI TCP Connection(57)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02T14:02:43.494+02:00  INFO 20624 --- [RMI TCP Connection(57)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02T14:02:43.497+02:00  INFO 20624 --- [RMI TCP Connection(57)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-02T14:02:43.500+02:00  INFO 20624 --- [RMI TCP Connection(57)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

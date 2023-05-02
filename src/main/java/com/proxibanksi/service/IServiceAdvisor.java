@@ -47,4 +47,6 @@ public interface IServiceAdvisor {
 			TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException;
 	
 	List<Transfert> transferBetweenAccounts(Long advisorId, Long clientId,TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException;
+
+	List<Transfert> transferBetweenAccountsCurrent(Long advisorId, TransfertRequestDTO transfertRequestDTO) throws TransfertNotFoundException;
 }

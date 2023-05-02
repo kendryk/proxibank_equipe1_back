@@ -122,17 +122,30 @@ public class RestAdvisorController {
 	}
 
 	@PostMapping("/{advisorId}/clients/{clientId}/accounts/transferBetweenAccounts")
-	public ResponseEntity<List<Transfert>> transferBetweenAccounts(@PathVariable Long advisorId, @PathVariable Long clientId,
-			@RequestBody TransfertRequestDTO transfertRequestDTO) {
+	public ResponseEntity<List<Transfert>> transferBetweenAccounts(@PathVariable Long advisorId,
+			@PathVariable Long clientId, @RequestBody TransfertRequestDTO transfertRequestDTO) {
 		try {
-			List<Transfert> transfert = this.serviceAdvisor.transferBetweenAccounts(advisorId, clientId, transfertRequestDTO);
+			List<Transfert> transfert = this.serviceAdvisor.transferBetweenAccounts(advisorId, clientId,
+					transfertRequestDTO);
 
 			return new ResponseEntity<List<Transfert>>(transfert, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<List<Transfert>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
+	@PostMapping("/{advisorId}/transferBetweenAccountsCurrent")
+	public ResponseEntity<List<Transfert>> transferBetweenAccountsCurrent(@PathVariable Long advisorId,
+			@RequestBody TransfertRequestDTO transfertRequestDTO) {
+		try {
+			List<Transfert> transfert = this.serviceAdvisor.transferBetweenAccountsCurrent(advisorId, transfertRequestDTO);
+
+			return new ResponseEntity<List<Transfert>>(transfert, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<List<Transfert>>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 	/* **** PUT **** */
 
 	@PutMapping("/{advisorId}/updateClient/{clientId}")

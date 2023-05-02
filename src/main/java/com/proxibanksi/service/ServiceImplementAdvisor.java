@@ -288,12 +288,53 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		if (sourceAccount.getId().equals(destinationAccount.getId())) {
 			throw new TransfertNotFoundException("Les comptes sources et destinations ne peuvent pas être les mêmes. ");
 		}
-		
-		// on vérifie que le transfert ne se fait pas d'un compte épargne vers un compte courant ou épargne d'un autre client
-		if (sourceAccount instanceof SavingAccount && 
-		    (destinationAccount instanceof CurrentAccount || destinationAccount instanceof SavingAccount) &&
-		    !sourceAccount.getOwner().equals(destinationAccount.getOwner())) {
-		    throw new TransfertNotFoundException("Le transfert d'un compte épargne vers un compte courant ou épargne d'un autre client est interdit.");
+
+		// on vérifie que le transfert ne se fait pas d'un compte épargne vers un compte
+		// courant ou épargne d'un autre client
+		if (sourceAccount instanceof SavingAccount
+				&& (destinationAccount instanceof CurrentAccount || destinationAccount instanceof SavingAccount)
+				&& !sourceAccount.getOwner().equals(destinationAccount.getOwner())) {
+			throw new TransfertNotFoundException(
+					"Le transfert d'un compte épargne vers un compte courant ou épargne d'un autre client est interdit.");
+		}
+
+		// on vérifie que le transfert ne se fait pas entre deux comptes épargne
+		if (sourceAccount instanceof SavingAccount && destinationAccount instanceof SavingAccount) {
+			throw new TransfertNotFoundException("Le transfert ne peut pas être effectué entre deux comptes épargne.");
+		}
+
+		// on vérife que la demande de transfert n'est pas inferieur à la balance du
+		// compte source
+		if (sourceAccount.getBalance().compareTo(transfertRequestDTO.getAmount()) < 0) {
+			throw new TransfertNotFoundException("Solde insuffisant sur le compte source.");
+		}
+
+		return this.transfert(sourceAccount, destinationAccount, transfertRequestDTO);
+	}
+
+	@Override
+	public List<Transfert> transferBetweenAccountsCurrent(Long advisorId, TransfertRequestDTO transfertRequestDTO)
+			throws TransfertNotFoundException {
+
+		// récupere des comptes source et destination
+		Account sourceAccount = accountDAO.findById(transfertRequestDTO.getAccountSourceId())
+				.orElseThrow(() -> new TransfertNotFoundException("compte source introuvable"));
+
+		Account destinationAccount = accountDAO.findById(transfertRequestDTO.getAccountDestinationId())
+				.orElseThrow(() -> new TransfertNotFoundException("compte destination introuvable"));
+
+		// on vérife que les comptes ne sont pas les mêmes:
+		if (sourceAccount.getId().equals(destinationAccount.getId())) {
+			throw new TransfertNotFoundException("Les comptes sources et destinations ne peuvent pas être les mêmes. ");
+		}
+
+		// on vérifie que le transfert ne se fait pas d'un compte épargne vers un compte
+		// courant ou épargne d'un autre client
+		if (sourceAccount instanceof SavingAccount
+				&& (destinationAccount instanceof CurrentAccount || destinationAccount instanceof SavingAccount)
+				&& !sourceAccount.getOwner().equals(destinationAccount.getOwner())) {
+			throw new TransfertNotFoundException(
+					"Le transfert d'un compte épargne vers un compte courant ou épargne d'un autre client est interdit.");
 		}
 
 		// on vérifie que le transfert ne se fait pas entre deux comptes épargne
@@ -322,9 +363,7 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		List<Transfert> transferts = new ArrayList<>();
 		transferts.add(transfertDebit);
 		transferts.add(transfertCredit);
-		
-		
-		
+
 		return transferts;
 	}
 
@@ -338,7 +377,7 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		account.setBalance(account.getBalance() + amount);
 
 		accountDAO.save(account);
-		
+
 		LOG.info("Transfer from account:" + account.getNumber());
 
 		return transfert;
@@ -354,7 +393,7 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		account.setBalance(account.getBalance() - amount);
 
 		accountDAO.save(account);
-		
+
 		LOG.info("Transfer to account:" + account.getNumber());
 
 		return transfert;
