@@ -322,6 +322,9 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		List<Transfert> transferts = new ArrayList<>();
 		transferts.add(transfertDebit);
 		transferts.add(transfertCredit);
+		
+		
+		
 		return transferts;
 	}
 
@@ -335,6 +338,8 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		account.setBalance(account.getBalance() + amount);
 
 		accountDAO.save(account);
+		
+		LOG.info("Transfer from account:" + account.getNumber());
 
 		return transfert;
 	}
@@ -349,6 +354,8 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 		account.setBalance(account.getBalance() - amount);
 
 		accountDAO.save(account);
+		
+		LOG.info("Transfer to account:" + account.getNumber());
 
 		return transfert;
 	}

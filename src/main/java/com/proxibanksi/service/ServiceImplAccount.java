@@ -41,7 +41,7 @@ public class ServiceImplAccount implements IServiceAccount {
 	public List<Account> getAudit() {
 		List<Account> accounts = getAllClientsAccount();
 		List<Account> overDraftsAccounts = accounts.stream()
-				.filter(c -> c.getBalance() < 0 && Math.abs(c.getBalance()) >= 1000.0).collect(Collectors.toList());
+				.filter(c -> c.getBalance() < 0 && Math.abs(c.getBalance()) >= 5000.0).collect(Collectors.toList());
 
 		return overDraftsAccounts;
 	}
