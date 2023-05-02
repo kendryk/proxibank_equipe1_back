@@ -146,7 +146,10 @@ public class ServiceImplementAdvisor implements IServiceAdvisor {
 
 			Client newClient = new Client(name, firstname, address, postcode, city, tel);
 			LOG.info("ServiceConseiller : nouveau client :" + newClient);
-
+			
+			// on lui ouvre un compte 
+			newClient.addAccount(new CurrentAccount(0.0));
+			
 			Set<Client> listClients = advisor.getClients();
 
 			if (listClients.size() >= advisor.getNumberClientlimit()) {
