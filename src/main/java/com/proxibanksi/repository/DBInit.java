@@ -41,10 +41,10 @@ public class DBInit {
 		Client client2 = new Client("Peter", "Parker", "15 avenue des Héros", "06073", "New York", "0623456789");
 		Client client3 = new Client("Carol", "Danvers", "8 avenue de la Liberté", "90560", "Los Angeles", "0634567890");
 		Client client4 = new Client("Clark", "Kent", "1 rue des Héros", "85676", "Metropolis", "0645678901");
-		Client client5 = new Client("Jessica", "Jones", "4 avenue de la Justice", "54321", " New York", "0656789012");
-		Client client6 = new Client("Tony", "Stark", "6 rue de la Technologie", "43254", " Los Angeles", "0667890123");
+		Client client5 = new Client("Jessica", "Jones", "4 avenue de la Justice", "54321", "New York", "0656789012");
+		Client client6 = new Client("Tony", "Stark", "6 rue de la Technologie", "43254", "Los Angeles", "0667890123");
 		Client client7 = new Client("Natasha", "Romanoff", "3 avenue des Espions", "34567", "Moscou", "0678901234");
-		Client client8 = new Client("Bruce", "Banner", "12 avenue de la Science", "76543", " New York", "0689012345");
+		Client client8 = new Client("Bruce", "Banner", "12 avenue de la Science", "76543", "New York", "0689012345");
 		Client client9 = new Client("Thor", "Odinson", "1000 5th Ave", "78965", "Houston", "0689102346");
 		Client client10 = new Client("Wanda", "Maximoff", "777 6th Ave", "54762", "San Diego", "0652992325");
 
